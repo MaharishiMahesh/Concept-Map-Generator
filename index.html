@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concept Map Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Interactive Concept Map Generator</h1>
+
+  <!-- Input section for adding topics -->
+  <div id="input-section">
+    <input type="text" id="node-label" placeholder="Enter topic">
+    <input type="color" id="node-color" value="#4a6df0" />
+    <input type="file" id="map-image" accept="image/*">
+<button onclick="runOCR()">📤 Extract Text from Image</button>
+    <button onclick="addNode()">Add Topic</button>
+    <button onclick="addEdge()">Connect Two Topics</button>
+    <button onclick="saveMap()">💾 Save Map</button>
+    <button onclick="loadMap()">📂 Load Map</button>
+    <button onclick="downloadMap()">🖼️ Download Map</button>
+    <button onclick="deleteSelectedNode()">🗑️ Delete Selected Node</button>
+
+  </div>
+  
+  
+
+  <!-- This is where your concept map will appear -->
+  <div id="network"></div>
+
+  <!-- Include vis.js from its online library -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
